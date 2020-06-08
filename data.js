@@ -435,5 +435,35 @@ module.exports.ROOMS = {
         }
 
     },
+    
+    testRoom: {
+        //the background graphics, it can be a spreadsheet
+        bg: "testRoom-bg.png",
+        //normally 2, avatars can be scaled to simulate camera distance
+        avatarScale: 2,
+        //a shade to tint the avatars to simulate light color, #FFFFFF normal
+        tint: "#00ff00",
+        //the html body color can be changed
+        pageBg: "#ab5236",
+        //minimum height for the speech bubbles
+        bubblesY: 50,
+        //if spawning directly in this room, top left and bottom right point defining the rectangular spawn area (random within it)
+        spawn: [39, 57, 68, 81],
+        //graphics with active areas Sierra Online adventures style
+        //color coded as below, #FFFFFF is walkable, transparent is obstacle
+        area: "testRoom-areas.png",
+        //each color can trigger a command, the destination needs to be reached first
+        //the "h" is replaced by # to identify color
+        areaColors: {
+            //enter command changes room
+            //room: id of the room to enter
+            //label: what to display on rollover
+            //point: where to walk after click
+            //enterPoint: where to spawn in the next room
+            //obstacle: is the area walkable
+            h005100: { cmd: "enter", room: "likelikeBackyard", label: "Backyard", point: [51, 34], enterPoint: [116, 69], obstacle: false }
+        },
+
+    },
 
 };
